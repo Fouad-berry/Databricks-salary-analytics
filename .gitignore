@@ -1,4 +1,4 @@
-# Fichiers et dossiers à ignorer pour ce projet Databricks
+# Fichiers et dossiers à ignorer
 
 # Données et outputs volumineux
 /data/
