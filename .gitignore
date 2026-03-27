@@ -1,0 +1,27 @@
+# Fichiers et dossiers à ignorer pour ce projet Databricks
+
+# Données et outputs volumineux
+/data/
+/mnt/
+/output/
+
+# Notebooks checkpoints
+.ipynb_checkpoints/
+
+# Fichiers temporaires
+*.tmp
+*.log
+*.bak
+
+# Environnements Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# Modèles ML
+/models/
+
+# Fichiers système
+.DS_Store
+Thumbs.db

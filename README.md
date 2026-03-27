@@ -9,17 +9,6 @@ Projet Data Lakehouse complet avec Databricks
 - Pipeline professionnel : ingestion, nettoyage, analytics, ML
 - Valorisation CV : Databricks, PySpark, Data Lakehouse, ETL, ML
 
-databricks-salary-analytics/
-│
-├── notebooks/
-│   ├── 01_bronze_ingestion.py
-│   ├── 02_silver_cleaning.py
-│   ├── 03_gold_aggregation.py
-│   ├── 04_salary_prediction.py
-│
-├── data/
-├── README.md
-
 ## Structure du projet
 
 ```
@@ -33,6 +22,7 @@ databricks-salary-analytics/
 │
 ├── data/                       # Données sources
 ├── README.md                   # Documentation
+├── requirements.txt            # Dépendances Python
 ```
 
 
@@ -79,8 +69,6 @@ df_gold.write.format("delta").mode("overwrite").save("/mnt/gold/jobs")
 # Features : job_title, country, experience_level, education
 # Target : salary
 ```
-
-
 ---
 
 ## Analyses possibles
@@ -89,9 +77,5 @@ df_gold.write.format("delta").mode("overwrite").save("/mnt/gold/jobs")
 - Salaire vs éducation
 - Remote vs salary
 
-## Valorisation en entretien
-> "J’ai construit un pipeline Data Lakehouse complet sur Databricks (Bronze/Silver/Gold) avec ingestion, nettoyage, analytics et prédiction de salaire."
-
----
 
 Prêt à démarrer !
