@@ -1,4 +1,5 @@
 # BRONZE LAYER - Ingestion des données brutes
+
 # Databricks notebook source
 
 # 1. Import des librairies
