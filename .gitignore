@@ -1,7 +1,6 @@
 # Fichiers et dossiers à ignorer
 
 # Données et outputs volumineux
-/data/
 /mnt/
 /output/
 
