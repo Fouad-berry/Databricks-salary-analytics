@@ -71,11 +71,33 @@ df_gold.write.format("delta").mode("overwrite").save("/mnt/gold/jobs")
 ```
 ---
 
+
+## Lancement sur Databricks
+
+### 1. Importer le projet
+- Uploade le dossier `notebooks/` sur ton workspace Databricks (via l’interface ou Databricks CLI)
+- Place le fichier de données (ex : `job_salary.csv`) dans `/FileStore/` ou `/dbfs/data/`
+
+### 2. Configurer le cluster
+- Crée un cluster Databricks (runtime 11.x+ recommandé, support PySpark)
+- Installe les dépendances si besoin (`requirements.txt`)
+
+### 3. Exécuter les notebooks
+1. Lance `01_bronze_ingestion.py` pour charger les données brutes
+2. Lance `02_silver_cleaning.py` pour nettoyer et typer les données
+3. Lance `03_gold_aggregation.py` pour générer les agrégations analytiques
+4. (Optionnel) Lance `04_salary_prediction.py` pour entraîner le modèle ML
+
+### 4. Visualiser les résultats
+- Les données transformées sont stockées dans `/mnt/bronze/`, `/mnt/silver/`, `/mnt/gold/`
+- Les modèles ML sont sauvegardés dans `/mnt/models/`
+
+---
+
 ## Analyses possibles
 - Salaire moyen par job
 - Salaire vs expérience
 - Salaire vs éducation
 - Remote vs salary
-
 
 Prêt à démarrer !

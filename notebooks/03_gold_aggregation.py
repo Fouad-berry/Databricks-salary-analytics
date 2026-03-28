@@ -7,7 +7,9 @@ from pyspark.sql.functions import avg, count, sum, round
 spark = SparkSession.builder.appName("GoldAggregation").getOrCreate()
 
 # Lecture Silver
-df = spark.read.format("delta").load("/mnt/silver/jobs")
+df = spark.read.format("delta").load(
+    "/Volumes/workspace/default/data_ingestion/silver_jobs"
+)
 
 print("🔍 Schema Silver")
 df.printSchema()
@@ -71,12 +73,33 @@ df_kpi = df.agg(
 # =========================
 # 💾 SAVE GOLD TABLES
 # =========================
-df_job.write.format("delta").mode("overwrite").save("/mnt/gold/jobs_by_title")
-df_location.write.format("delta").mode("overwrite").save("/mnt/gold/jobs_by_location")
-df_education.write.format("delta").mode("overwrite").save("/mnt/gold/jobs_by_education")
-df_experience.write.format("delta").mode("overwrite").save("/mnt/gold/jobs_by_experience")
-df_industry.write.format("delta").mode("overwrite").save("/mnt/gold/jobs_by_industry")
-df_remote.write.format("delta").mode("overwrite").save("/mnt/gold/jobs_remote_analysis")
-df_kpi.write.format("delta").mode("overwrite").save("/mnt/gold/global_kpis")
 
+# SAVE GOLD
+df_job.write.format("delta").mode("overwrite").save(
+    "/Volumes/workspace/default/data_ingestion/gold_jobs_by_title"
+)
+
+df_location.write.format("delta").mode("overwrite").save(
+    "/Volumes/workspace/default/data_ingestion/gold_jobs_by_location"
+)
+
+df_education.write.format("delta").mode("overwrite").save(
+    "/Volumes/workspace/default/data_ingestion/gold_jobs_by_education"
+)
+
+df_experience.write.format("delta").mode("overwrite").save(
+    "/Volumes/workspace/default/data_ingestion/gold_jobs_by_experience"
+)
+
+df_industry.write.format("delta").mode("overwrite").save(
+    "/Volumes/workspace/default/data_ingestion/gold_jobs_by_industry"
+)
+
+df_remote.write.format("delta").mode("overwrite").save(
+    "/Volumes/workspace/default/data_ingestion/gold_jobs_remote_analysis"
+)
+
+df_kpi.write.format("delta").mode("overwrite").save(
+    "/Volumes/workspace/default/data_ingestion/gold_global_kpis"
+)
 print("🎉 Gold layer terminé (niveau pro) !")

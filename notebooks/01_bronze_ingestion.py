@@ -15,6 +15,8 @@ df.printSchema()
 df.show(5)
 
 # 4. Sauvegarde au format Delta (Bronze)
-df.write.format("delta").mode("overwrite").save("/mnt/bronze/jobs")
+df.write.format("delta").mode("overwrite").save(
+    "/Volumes/workspace/default/data_ingestion/bronze_jobs"
+)
 
 print("Ingestion Bronze terminée !")
