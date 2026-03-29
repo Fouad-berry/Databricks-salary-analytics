@@ -9,6 +9,8 @@ Projet Data Lakehouse complet avec Databricks
 - Pipeline professionnel : ingestion, nettoyage, analytics, ML
 - Valorisation CV : Databricks, PySpark, Data Lakehouse, ETL, ML
 
+![Dashboard Databricks](images/dashboard.png)
+
 ## Structure du projet
 
 ```
