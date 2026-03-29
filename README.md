@@ -102,4 +102,5 @@ df_gold.write.format("delta").mode("overwrite").save("/mnt/gold/jobs")
 - Salaire vs éducation
 - Remote vs salary
 
-Prêt à démarrer !
+## Lien Databricks
+[Databricks Salary Analytics]https://dbc-8bc97cb2-8338.cloud.databricks.com/dashboardsv3/01f129c4e79e10b88d11feb13e791050/published?o=7474650928720376
